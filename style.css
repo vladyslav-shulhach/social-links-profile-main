@@ -1,16 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
 /* Variables */
 :root {
     /* Colors */
     --green: hsl(75, 94%, 57%);
     --white: hsl(0, 0%, 100%);
-    --grey-700: hsl(0, 0%, 20%);
-    --grey-800: hsl(0, 0%, 12%);
-    --grey-900: hsl(0, 0%, 8%);
+    --grey: hsl(0, 0%, 20%);
+    --dark-grey: hsl(0, 0%, 12%);
+    --darker-grey: hsl(0, 0%, 8%);
 
     /* Fonts */
     --font-family: "Inter", sans-serif;
+    --small-title-font-size: 1.125rem;
     --regular-font-size: 0.875rem;
 }
 
@@ -23,7 +22,7 @@
 }
 
 body {
-    background-color: var(--grey-900);
+    background-color: var(--darker-grey);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -43,7 +42,7 @@ p {
 /* Profile */
 
 .profile {
-    background-color: var(--grey-800);
+    background-color: var(--dark-grey);
     padding: 40px;
     border-radius: 10px;
 }
@@ -58,7 +57,7 @@ p {
 .profile__avatar {
     border-radius: 50%;
     height: 90px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
 
 .profile__name {
@@ -67,11 +66,12 @@ p {
 
 .profile__place {
     color: var(--green);
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .profile__description {
-    padding: 16px 24px 24px 24px;
+    padding: 24px;
+    font-weight: 300;
 }
 
 .profile__buttons {
@@ -80,11 +80,13 @@ p {
 }
 
 .button {
-    background-color: var(--grey-700);
+    background-color: var(--grey);
     border: none;
     width: 100%;
-    padding: 16px 0;
+    padding: 14px 0;
     border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
     font-family: var(--font-family);
     font-size: var(--regular-font-size);
     color: var(--white);
@@ -99,6 +101,11 @@ p {
     transition: 600ms;
 }
 
+.button:focus {
+    outline: 3px solid var(--green);
+    outline-offset: 2px;
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
@@ -106,9 +113,28 @@ p {
     bottom: 0;
     padding: 10px;
     color: var(--white);
-    display: none;
 }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: hsl(228, 60%, 59%);
+}
+
+/* Mobile version */
+
+@media (max-width: 480px) {
+    .profile {
+        padding: 24px;
+    }
+
+    .profile__avatar {
+        height: 70px;
+    }
+
+    .profile__header {
+        gap: 4px;
+    }
+
+    .button {
+        padding: 12px 0;
+    }
 }
