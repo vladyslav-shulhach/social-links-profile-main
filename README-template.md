@@ -23,7 +23,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![Screenshot of the project](./preview.png)
 
 ### Links
 
@@ -43,6 +43,27 @@ Users should be able to:
 
 ### What I learned
 
+- It's better to use `<a>` tags instead of `<button>` elements. This way, the links are more semantic and accessible. By adding an `href` attribute, the links behave properly:
+     ```html
+     <a href="#" class="button" aria-label="Visit Jessica's GitHub profile">GitHub</a>
+     ```
+   - I also learned about the `aria-label` attribute, which is great for screen readers. It describes what the link does, making it easier for visually impaired users to understand.
+
+- I discovered that adding a `<meta>` description tag helps both search engines and screen readers. It provides a summary of what the page is about, making it more visible in search results and easier to understand for assistive technology:
+     ```html
+     <meta name="description" content="Jessica Randall's profile. Front-end developer and avid reader based in London, United Kingdom. Links to GitHub, Frontend Mentor, LinkedIn, Twitter, and Instagram profiles.">
+     ```
+
+- Instead of using `@import` to load fonts, I learned it's better to use a `<link>` tag inside the `<head>` section. This helps the page load faster because the browser starts downloading the fonts sooner.
+
+- I added a focus style to buttons so they are easier to navigate with a keyboard. This is helpful for users who rely on keyboards instead of a mouse. The focus style clearly shows which element is currently selected:
+     ```css
+     .button:focus {
+         outline: 3px solid var(--green);
+         outline-offset: 2px;
+     }
+     ```
+
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [Vladyslav Shulhach](https://www.frontendmentor.io/profile/Vladyslav-Shulhach)
